@@ -1,0 +1,76 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - myj
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ci-cd-myj
+  cancel-in-progress: false
+
+jobs:
+  sync-to-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout myj branch
+        uses: actions/checkout@v4
+        with:
+          ref: myj
+          fetch-depth: 0
+
+      - name: Sync myj to release branch
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git push origin myj:release --force
+
+  ci-cd:
+    needs: sync-to-release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout release branch
+        uses: actions/checkout@v4
+        with:
+          ref: release
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run lint
+        run: pnpm lint
+
+      - name: Run build
+        run: pnpm build
+
+  merge-to-main:
+    needs: ci-cd
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Merge release into main
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git fetch origin release
+          git merge origin/release --no-ff --no-edit
+          git push origin main
