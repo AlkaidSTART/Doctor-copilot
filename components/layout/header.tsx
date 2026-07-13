@@ -16,6 +16,7 @@ import {
 import { useTheme } from "next-themes"
 
 import { cn } from "@/lib/utils"
+import { useAuth } from "@/lib/auth/use-auth"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
@@ -37,11 +38,6 @@ import type { UserRole } from "@/components/layout/app-shell"
 
 export interface HeaderProps {
   role?: UserRole
-  user?: {
-    name?: string
-    email?: string
-    avatarUrl?: string
-  }
   notificationCount?: number
   onMenuClick?: () => void
   onLogoClick?: () => void
@@ -79,12 +75,12 @@ function ThemeSubMenu() {
 
 export function Header({
   role = "doctor",
-  user,
   notificationCount = 0,
   onMenuClick,
   onLogoClick,
   className,
 }: HeaderProps) {
+  const { user, logout } = useAuth()
   const userInitial = (user?.name?.[0] ?? "U").toUpperCase()
   const userLabel = user?.name ?? "用户"
 
@@ -202,7 +198,7 @@ export function Header({
               </DropdownMenuItem>
               <ThemeSubMenu />
               <DropdownMenuSeparator />
-              <DropdownMenuItem variant="destructive">
+              <DropdownMenuItem variant="destructive" onClick={logout}>
                 <LogOut className="size-4" aria-hidden="true" />
                 <span>退出登录</span>
               </DropdownMenuItem>

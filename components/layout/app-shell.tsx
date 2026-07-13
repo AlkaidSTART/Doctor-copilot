@@ -3,6 +3,7 @@
 import * as React from "react"
 
 import { cn } from "@/lib/utils"
+import { useAuth } from "@/lib/auth/use-auth"
 import { Header } from "@/components/layout/header"
 import { Sidebar } from "@/components/layout/sidebar"
 import { MainContent } from "@/components/layout/main-content"
@@ -12,15 +13,11 @@ export type UserRole = "doctor" | "nurse" | "patient" | "admin"
 export interface AppShellProps {
   children: React.ReactNode
   role?: UserRole
-  user?: {
-    name?: string
-    email?: string
-    avatarUrl?: string
-  }
   className?: string
 }
 
-export function AppShell({ children, role = "doctor", user, className }: AppShellProps) {
+export function AppShell({ children, role = "doctor", className }: AppShellProps) {
+  const { user } = useAuth()
   const [mobileOpen, setMobileOpen] = React.useState(false)
   const [collapsed, setCollapsed] = React.useState(() => {
     if (typeof window === "undefined") return false
@@ -42,7 +39,6 @@ export function AppShell({ children, role = "doctor", user, className }: AppShel
     <div className={cn("relative min-h-screen bg-[var(--color-bg-page)]", className)}>
       <Header
         role={role}
-        user={user}
         onMenuClick={() => setMobileOpen(true)}
         onLogoClick={() => setMobileOpen(false)}
       />

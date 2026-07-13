@@ -80,10 +80,7 @@ export default function DashboardPage() {
   }
 
   return (
-    <AppShell
-      role="doctor"
-      user={{ name: "李医生", email: "doctor@example.com" }}
-    >
+    <AppShell role="doctor">
       <PageHeader
         title="Dashboard"
         description="今日待处理 12 项，P1 风险 2 人"
