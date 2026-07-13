@@ -13,7 +13,6 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import type { MessageFilters as Filters, MessageType, ReadStatus, TimeRange, RiskFilter } from "@/features/messages/types"
-import type { RiskLevel } from "@/components/common/risk-badge"
 
 const TYPE_OPTIONS: { value: MessageType | "all"; label: string }[] = [
   { value: "all", label: "全部" },

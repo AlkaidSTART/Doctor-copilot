@@ -34,20 +34,23 @@ export function KpiSection({ kpis, loading }: KpiSectionProps) {
 
   return (
     <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-      {kpis.map((kpi) => (
-        <KpiCard
-          key={kpi.label}
-          label={kpi.label}
-          value={kpi.value}
-          delta={kpi.delta}
-          trend={kpi.trend}
-          onClick={kpi.href ? () => router.push(kpi.href) : undefined}
-          className={cn(
-            kpi.alert === "error" && "border-[var(--color-error-500)]",
-            kpi.alert === "warning" && "border-[var(--color-warning-500)]"
-          )}
-        />
-      ))}
+      {kpis.map((kpi) => {
+        const href = kpi.href
+        return (
+          <KpiCard
+            key={kpi.label}
+            label={kpi.label}
+            value={kpi.value}
+            delta={kpi.delta}
+            trend={kpi.trend}
+            onClick={href ? () => router.push(href) : undefined}
+            className={cn(
+              kpi.alert === "error" && "border-[var(--color-error-500)]",
+              kpi.alert === "warning" && "border-[var(--color-warning-500)]"
+            )}
+          />
+        )
+      })}
     </div>
   )
 }

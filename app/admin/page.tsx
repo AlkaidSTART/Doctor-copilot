@@ -12,7 +12,7 @@ import { AIConfig } from "@/features/admin/components/ai-config"
 import { PromptManagement } from "@/features/admin/components/prompt-management"
 import { KnowledgeBase } from "@/features/admin/components/knowledge-base"
 import { AuditLogs } from "@/features/admin/components/audit-logs"
-import { MODULE_ITEMS, type AdminModule } from "@/features/admin/lib/types"
+import { type AdminModule } from "@/features/admin/lib/types"
 
 const MODULE_TITLES: Record<AdminModule, string> = {
   users: "用户管理",

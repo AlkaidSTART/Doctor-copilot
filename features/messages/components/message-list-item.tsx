@@ -49,15 +49,7 @@ export function MessageListItem({
 
   return (
     <div
-      role="button"
-      tabIndex={0}
       onClick={onSelect}
-      onKeyDown={(event) => {
-        if (event.key === "Enter" || event.key === " ") {
-          event.preventDefault()
-          onSelect()
-        }
-      }}
       className={cn(
         "group/item relative flex cursor-pointer items-start gap-3 border-b border-[var(--color-border-divider)] p-3 transition-colors outline-none hover:bg-[var(--color-bg-hover)] focus-visible:ring-2 focus-visible:ring-[var(--color-ring)] focus-visible:ring-inset",
         selected && "bg-[var(--color-bg-selected)]",
@@ -139,21 +131,16 @@ export function MessageListItem({
         </div>
       </div>
 
-      <div className="absolute top-3 right-3 flex items-center">
-        <span className="text-[length:var(--text-xs)] text-[var(--color-text-tertiary)] transition-opacity group-hover/item:opacity-0">
-          {formatMessageTime(message.timestamp)}
-        </span>
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={handleMarkReadClick}
-          className="h-auto px-2 py-1 opacity-0 transition-opacity group-hover/item:opacity-100"
-          disabled={message.isRead}
-        >
-          <CheckCheck className="size-3.5" />
-          <span className="ml-1">已读</span>
-        </Button>
-      </div>
+      <Button
+        variant="ghost"
+        size="sm"
+        onClick={handleMarkReadClick}
+        className="absolute top-1/2 right-3 h-auto -translate-y-1/2 px-2 py-1 opacity-0 transition-opacity group-hover/item:opacity-100"
+        disabled={message.isRead}
+      >
+        <CheckCheck className="size-3.5" />
+        <span className="ml-1">已读</span>
+      </Button>
     </div>
   )
 }

@@ -51,15 +51,6 @@ export function PermissionManagement() {
     return node.children.every((child) => groupChecked(child))
   }
 
-  const groupIndeterminate = (node: PermissionNode): boolean => {
-    if (!node.children) return false
-    const childStates = node.children.map((child) => ({
-      checked: selected.has(child.id),
-      indeterminate: groupIndeterminate(child),
-    }))
-    return childStates.some((s) => s.checked || s.indeterminate) && !childStates.every((s) => s.checked)
-  }
-
   const affectedUsers = mockUsers.filter((u) => u.role === "医生" || u.role === "护士").length
 
   const handleSave = () => {

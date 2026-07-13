@@ -60,8 +60,6 @@ export function MessageDetail({ message, onMarkRead, onDelete, onPin }: MessageD
     )
   }
 
-  const TypeIcon = typeIcon[message.type]
-
   return (
     <div className="flex h-full flex-col bg-[var(--color-bg-card)]">
       <div className="flex items-start justify-between border-b border-[var(--color-border-divider)] p-4">
@@ -149,7 +147,6 @@ export function MessageDetail({ message, onMarkRead, onDelete, onPin }: MessageD
             <MessageReplyArea
               recipient={message.patientName || message.senderName}
               onSend={(text: string) => {
-                // eslint-disable-next-line no-console
                 console.log("发送回复:", text)
               }}
             />
