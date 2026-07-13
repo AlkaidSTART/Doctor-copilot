@@ -1,7 +1,7 @@
 # 05 TDD（Technical Design Document）
 
 ## 背景
-项目技术栈为 Next.js 15+/React 19/TypeScript/Supabase/Postgres/pgvector/Vercel AI SDK。
+项目技术栈为 Next.js 16+/React 19/TypeScript/Supabase/Postgres/pgvector/Vercel AI SDK。
 
 ## 为什么
 需要可直接开发的技术设计，统一工程结构、边界和非功能性约束。
