@@ -9,10 +9,7 @@ import {
   Pencil,
   Printer,
   Trash2,
-  User,
 } from "lucide-react"
-
-import { cn } from "@/lib/utils"
 import type { Patient } from "@/features/patient/types"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
