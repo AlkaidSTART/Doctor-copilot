@@ -2,7 +2,7 @@
 
 ## 架构概述
 
-前端采用 Next.js App Router + React 19 的架构模式，使用 shadcn/ui 组件库和 Tailwind CSS 4 进行样式开发。
+前端采用 Next.js App Router + React 的架构模式，使用 shadcn/ui 组件库和 Tailwind CSS 进行样式开发。
 
 ## 架构图
 

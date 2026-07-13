@@ -7,13 +7,13 @@ Doctor Copilot 是面向院外连续医疗照护场景的 AI Care Platform，需
 ## 技术栈选择
 
 ### 前端框架
-- **Next.js 15+**：全栈框架，支持 Server Components、App Router、Server Actions
-- **React 19**：最新版本，支持并发特性
+- **Next.js**：全栈框架，支持 Server Components、App Router、Server Actions
+- **React**：支持并发特性
 - **TypeScript**：类型安全
 
 ### UI 组件库
 - **shadcn/ui**：基于 Tailwind CSS 的组件库
-- **Tailwind CSS 4**：原子化 CSS 框架
+- **Tailwind CSS**：原子化 CSS 框架
 - **Lucide React**：图标库
 
 ### 后端服务

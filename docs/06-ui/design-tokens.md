@@ -4,7 +4,7 @@
 
 Design Tokens 是 Doctor Copilot 视觉设计的基础原子。所有组件、页面、交互模式都必须引用这些 Token，确保跨角色、跨设备的一致性。
 
-技术实现：通过 Tailwind CSS 4 的 `@theme inline` 与 CSS 变量注入。Token 命名遵循语义化（如 `risk-high`）而非具体色值，便于后续主题切换。
+技术实现：通过 Tailwind CSS 的 `@theme inline` 与 CSS 变量注入。Token 命名遵循语义化（如 `risk-high`）而非具体色值，便于后续主题切换。
 
 ## 色彩系统
 
