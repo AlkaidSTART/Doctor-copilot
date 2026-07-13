@@ -6,9 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "dev:web": "next dev",
+    "dev:api": "pnpm --filter @doctor-copilot/api dev",
+    "build:web": "next build",
+    "build:api": "pnpm --filter @doctor-copilot/api build",
+    "install:api": "pnpm --filter @doctor-copilot/api install"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.110.2",
     "next": "16.2.10",
     "react": "19.2.4",
     "react-dom": "19.2.4"

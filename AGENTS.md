@@ -82,6 +82,7 @@ flowchart LR
 | [reactor（重构）.md](./.harness/workflows/reactor（重构）.md) | 重构流程 |
 | [research.md](./.harness/workflows/research.md) | 技术调研流程 |
 | [architecture（架构）.md](./.harness/workflows/architecture（架构）.md) | 架构设计流程 |
+| [full-stack-workflow.md](./.harness/workflows/full-stack-workflow.md) | 全栈工作流程 |
 
 ### 3. Rules（规则文档）
 
