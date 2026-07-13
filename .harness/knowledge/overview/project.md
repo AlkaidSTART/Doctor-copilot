@@ -33,11 +33,11 @@ Doctor Copilot 是面向院外连续医疗照护场景的 AI Care Platform，服
 ## 技术栈
 
 ### 前端
-- Next.js 15+
-- React 19
+- Next.js
+- React
 - TypeScript
 - shadcn/ui
-- Tailwind CSS 4
+- Tailwind CSS
 
 ### 后端
 - Next.js Server Actions

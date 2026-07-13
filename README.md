@@ -36,7 +36,7 @@ Auth -> Patient -> Plan -> Task -> Follow-up -> Timeline -> Alert -> Brief
 ## 技术栈
 | 层 | 技术 |
 |---|---|
-| 前端 | Next.js 15+, React 19, TypeScript, TailwindCSS v4, shadcn/ui |
+| 前端 | Next.js, React, TypeScript, Tailwind CSS, shadcn/ui |
 | 数据 | Supabase, Postgres, pgvector |
 | AI | Vercel AI SDK, OpenAI, Claude, Gemini, DeepSeek, Qwen |
 | 状态与数据 | TanStack Query, Server Actions |

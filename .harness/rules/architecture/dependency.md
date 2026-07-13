@@ -3,8 +3,8 @@
 ## 依赖类型
 
 ### 核心依赖
-- Next.js 15+
-- React 19
+- Next.js
+- React
 - TypeScript
 - Supabase
 - Vercel AI SDK
